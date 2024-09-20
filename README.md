@@ -1,5 +1,5 @@
 CSC-1310-105 Program 1 README.md
 
-We chose to create a Video Game Library simulation program. This is a menu based program that will allow the user to add games, 
-removes games, displays the, saves them, and loads them to a file. We will utilize a class to store the data of each video 
-game and a loop to control the menu of the program.
+We chose to create a Movie program. This is a menu based program that will allow the user to add movies, 
+remove movies, display them, save them, and load them to a file. We will utilize a Movie class for the data and 
+a DvdShelf class to store the data. Our third class will be a sub-data class in Movie called Rating.
