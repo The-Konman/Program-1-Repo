@@ -7,8 +7,8 @@
 
 
 #include <iostream>
-#include "VideoGameLibrary.h"
-#include "VideoGame.h"
+#include "DvdShelf.h"
+#include "Movie.h"
 
 using namespace std;
 
