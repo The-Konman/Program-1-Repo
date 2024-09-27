@@ -29,7 +29,7 @@ void displayShelf(DvdShelf currShelf, int movieCount)
 {
     for(int i = 0; i<movieCount; i++)
     {
-        cout << currShelf.shelf[i];
+        cout << currShelf.shelf[i]->getTitle();
     }
     
 }
