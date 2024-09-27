@@ -14,7 +14,7 @@ class Movie {
     private:
         string title;
         string genre;
-        *Rating movierating;
+        Rating* movierating;
         int year;
         int movieLength;
 

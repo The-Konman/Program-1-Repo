@@ -7,30 +7,53 @@
 #ifndef DVDSHELF_H
 #define DVDSHELF_H
 #include "Movie.h"
+#include "Rating.h"
+#include <iostream>;
 
 class DvdShelf {
 
-    private:
-        int shelfSize;
-        Movie shelf[];
-
+        
 
     public:
+        int movieCount;
+        Movie** shelf;
+
         //Getters
-        int getShelfSize() const
+        int getMovieCount() const
         {
-            return shelfSize;
+            return movieCount;
         }
-        int getShelf()
+        Movie** getShelf()
         {
             return shelf;
         }
+
         
 
         //Setters
-        void setShelfSize(int s)
+        void setShelfSize(int c)
         {
-            shelfSize = s;
+            movieCount= c;
+        }
+
+        //Overloaded constructor
+        DvdShelf(int movieCount, Movie** shelf)
+        {
+            this->movieCount = movieCount;
+            this->shelf = shelf;
+        }
+
+        //Default constructor
+        DvdShelf()
+        {
+            this->movieCount = 0;
+            this->shelf = 0;
+        }
+
+        //Destructor
+        ~DvdShelf()
+        {
+            cout << "\n\nDeleting the Dvd Shelf!\n\n";
         }
 
 };
