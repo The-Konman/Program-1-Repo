@@ -6,6 +6,7 @@
 
 #ifndef DVDSHELF_H
 #define DVDSHELF_H
+#include "Movie.h"
 
 class DvdShelf {
 

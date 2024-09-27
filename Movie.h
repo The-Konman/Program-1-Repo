@@ -4,8 +4,10 @@
 
 */
 
-#ifndef
+#ifndef MOVIE_H
 #define MOVIE_H
+#include "Rating.h"
+using namespace std;
 
 class Movie {
 
@@ -33,11 +35,11 @@ class Movie {
         }
         int getMovieLength() const
         {
-            return length;
+            return movieLength;
         }
 
         //Setters
-        void setTitle(int t) 
+        void setTitle(string t) 
         {
             title = t;
         }
@@ -65,7 +67,7 @@ class Movie {
         
 
 
-}
+};
 
 
 #endif
