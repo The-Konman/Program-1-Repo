@@ -4,8 +4,9 @@
 
 */
 
-#ifndef
+#ifndef MOVIE_H
 #define MOVIE_H
+#include "Rating.h"
 
 class Movie {
 
@@ -37,7 +38,7 @@ class Movie {
         }
 
         //Setters
-        void setTitle(int t) 
+        void setTitle(string t) 
         {
             title = t;
         }
@@ -65,7 +66,7 @@ class Movie {
         
 
 
-}
+};
 
 
 #endif
