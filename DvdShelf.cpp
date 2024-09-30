@@ -6,8 +6,6 @@
 
 
 #include "DvdShelf.h"
-#include "Movie.h"
-#include "Rating.h"
 using namespace std;
 
 //Function prototypes

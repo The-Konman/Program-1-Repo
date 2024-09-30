@@ -6,5 +6,5 @@
 */
 
 #include <iostream>
-#include "Rating.h"
+#include "DvdShelf.h"
 using namespace std;

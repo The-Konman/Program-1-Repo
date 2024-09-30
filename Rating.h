@@ -4,7 +4,7 @@
 
 */
 
-
+#include "DvdShelf.h"
 #ifndef RATING_H
 #define RATING_H
 
