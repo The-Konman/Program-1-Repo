@@ -103,7 +103,7 @@ int main ()
 
     }
 
-    cout << "\n\nYou have succefully quit the program." << endl;
+    cout << "\n\nYou have successfully quit the program." << endl;
 
     return 0;
 }
