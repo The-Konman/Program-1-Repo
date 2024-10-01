@@ -57,6 +57,12 @@ class DvdShelf {
             cout << "\n\nDeleting the Dvd Shelf!\n\n";
         }
 
+        void addMovies(DvdShelf, string);
+        void removeMovies(DvdShelf, string);
+        void displayShelf(DvdShelf, int);
+        //void addToFile(DvdShelf, Movie);
+        //void loadToFile(DvdShelf, Movie);     
+
 };
 
 

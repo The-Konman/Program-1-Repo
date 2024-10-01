@@ -8,13 +8,6 @@
 #include "DvdShelf.h"
 using namespace std;
 
-//Function prototypes
-void addMovies(DvdShelf, Movie);
-void removeMovies(DvdShelf, Movie);
-void displayShelf(DvdShelf, int);
-//void addToFile(DvdShelf, Movie);
-//void loadToFile(DvdShelf, Movie);
-
 
 //Function Definitions
 
@@ -38,9 +31,37 @@ void displayShelf(DvdShelf currShelf, int movieCount)
           Purpose: Adds movies the DvDShelf
       Return Type: Void
 */
-void addMovies(DvdShelf, Movie)
+void addMovies(DvdShelf shelf, string m)
 {
+    string title = m;
+    string genre;
+    int year;
+    int length;
+    Movie movie;
 
+    movie.setTitle(title);
+    
+    cout << "\n\nWhat genre is " << title << "?\t";
+            
+    getline(cin, genre);
+    movie.setGenre(genre);
+
+    cout << "\n\nWhat year did " << title << " come out?\t";
+
+    cin >> year;
+    movie.setYear(year);
+
+    cout << "\n\nHow long is " << title << " in minutes?\t";
+
+    cin >> length;
+    movie.setMovieLength(length);
+
+    cout << "\n\nYour movie has been added." << endl;
+
+    cout << "Title: " << movie.getTitle();
+    cout << "\nGenre: " << movie.getGenre();
+    cout << "\nYear: " << movie.getYear();
+    cout << "\nLength (in Minutes): " << movie.getMovieLength();
 
 }
 

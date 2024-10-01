@@ -56,12 +56,8 @@ class Movie {
             movieLength = m;
         }
         //Overloaded constructor
-        Movie(string t, string g, int y, int m) 
+        Movie() 
         { 
-            title = t;
-            genre = g;
-            year = y;
-            movieLength = m;
         }
         
         
