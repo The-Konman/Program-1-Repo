@@ -6,10 +6,7 @@
 
 
 #include "DvdShelf.h"
-using namespace std;
 
-
-//Function Definitions
 
 /*
     Function Name: displayShelf()
@@ -18,10 +15,7 @@ using namespace std;
 */
 void displayShelf(DvdShelf currShelf, int movieCount)
 {
-    for(int i = 0; i<movieCount; i++)
-    {
-        cout << currShelf.shelf[i]->getTitle();
-    }
+   
     
 }
 
@@ -33,10 +27,9 @@ void displayShelf(DvdShelf currShelf, int movieCount)
 */
 void addMovies(DvdShelf shelf, string m)
 {
-    string title = m;
-    string genre;
-    int year;
-    int length;
+    string genre, title = m;
+    int year, length;
+
     Movie movie;
 
     movie.setTitle(title);
@@ -55,16 +48,14 @@ void addMovies(DvdShelf shelf, string m)
 
     cin >> length;
     movie.setMovieLength(length);
-
+    
     cout << "\n\nYour movie has been added." << endl;
 
     cout << "Title: " << movie.getTitle();
     cout << "\nGenre: " << movie.getGenre();
     cout << "\nYear: " << movie.getYear();
     cout << "\nLength (in Minutes): " << movie.getMovieLength();
-
 }
-
 
 /*
     Function Name: removeMovies()

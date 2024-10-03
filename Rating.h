@@ -5,6 +5,7 @@
 */
 #ifndef RATING_H
 #define RATING_H
+#include "DvdShelf.h"
 
 class Rating 
 {

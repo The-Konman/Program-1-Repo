@@ -5,11 +5,8 @@
     Purpose:    
 */
 
-
-#include <iostream>
 #include "DvdShelf.h"
 
-using namespace std;
 
 int main () 
 {

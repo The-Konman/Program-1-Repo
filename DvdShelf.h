@@ -10,58 +10,42 @@
 #include "Rating.h"
 #include <iomanip>
 #include <iostream>
+using namespace std;
 
 class DvdShelf {
 
         
 
     public:
+        Movie *moviePtr;
         int movieCount;
-        Movie** shelf;
+        Movie ** movieArray;
 
-        //Getters
-        int getMovieCount() const
-        {
-            return movieCount;
-        }
-        Movie** getShelf()
-        {
-            return shelf;
-        }
+    void addMovies(DvdShelf, string);
+    void removeMovies(DvdShelf, string);
+    void displayShelf(DvdShelf, int);
+    //void addToFile(DvdShelf, Movie);
+    //void loadToFile(DvdShelf, Movie);  
 
-        
+    //Overloaded constructor
+    DvdShelf(int movieCount, Movie* shelf[])
+    {
+        this->movieCount = movieCount;
+       // this->shelf = shelf;
+    }
 
-        //Setters
-        void setShelfSize(int c)
-        {
-            movieCount= c;
-        }
+    //Default constructor
+    DvdShelf()
+    {
+        this->movieCount = 0;
+       // this->shelf = 0;
+    }
 
-        //Overloaded constructor
-        DvdShelf(int movieCount, Movie** shelf)
-        {
-            this->movieCount = movieCount;
-            this->shelf = shelf;
-        }
-
-        //Default constructor
-        DvdShelf()
-        {
-            this->movieCount = 0;
-            this->shelf = 0;
-        }
-
-        //Destructor
-        ~DvdShelf()
-        {
-            cout << "\n\nDeleting the Dvd Shelf!\n\n";
-        }
-
-        void addMovies(DvdShelf, string);
-        void removeMovies(DvdShelf, string);
-        void displayShelf(DvdShelf, int);
-        //void addToFile(DvdShelf, Movie);
-        //void loadToFile(DvdShelf, Movie);     
+    //Destructor
+    ~DvdShelf()
+    {
+        cout << "\n\nDeleting the Dvd Shelf!\n\n";
+    }
 
 };
 

@@ -7,7 +7,6 @@
 #ifndef MOVIE_H
 #define MOVIE_H
 #include "DvdShelf.h"
-using namespace std;
 
 class Movie {
 
@@ -18,49 +17,22 @@ class Movie {
         int year;
         int movieLength;
 
-
     public:
-        //Getters
-        string getTitle()const
-        {
-            return title;
-        }
-        string getGenre() const
-        {
-            return genre;
-        }
-        int getYear() const
-        {
-            return year;
-        }
-        int getMovieLength() const
-        {
-            return movieLength;
-        }
+        //Getter prototypes
+        string getTitle() const;
+        string getGenre() const;
+        int getYear() const;
+        int getMovieLength() const;
+        //Setter prototypes
+        void setTitle(string);
+        void setGenre(string);
+        void setYear(int);
+        void setMovieLength(int);
 
-        //Setters
-        void setTitle(string t) 
-        {
-            title = t;
-        }
-        void setGenre(string g) 
-        {
-            genre = g;
-        }
-        void setYear(int y) 
-        {
-            year = y;
-        }
-        void setMovieLength(int m) 
-        {
-            movieLength = m;
-        }
-        //Overloaded constructor
-        Movie() 
-        { 
-        }
-        
-        
+        //Constructor prototype
+        Movie();
+        //Destructor Prototype
+        ~Movie();
 
 
 };
