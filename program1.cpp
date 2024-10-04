@@ -10,7 +10,6 @@
 
 int main () 
 {
-    
     int choice = 0, movieCount = 0;
     int MAX_SIZE = 100;
     string fileName;
@@ -19,6 +18,8 @@ int main ()
     //Dynamically allocate array of pointers to movie objects
     shelf.movieArray = new Movie*[MAX_SIZE];
 
+    do
+    {
     cout << "\n\nWelcome to the Dvd Shelf" << endl<< endl;
 
     cout << "1. Load Movies from File" << endl;
@@ -37,9 +38,6 @@ int main ()
         cin >> choice;
     }
 
-
-
-    while (choice != 6) {
 
         if (choice == 1) {
             cout << "\n\nYou have chosen to load movies from a file" << endl;
@@ -101,7 +99,7 @@ int main ()
 
         }
 
-    }
+    }while (choice != 6);
 
     cout << "\n\nYou have successfully quit the program." << endl;
 
