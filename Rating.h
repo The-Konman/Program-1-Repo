@@ -7,13 +7,18 @@
 #ifndef RATING_H
 #define RATING_H
 #include "DvdShelf.h"
+#include "Movie.h"
+#include <iomanip>
+#include <iostream>
+#include <string>
+using namespace std;
 
 class Rating 
 {
 
     private:
 
-    int movieRating;
+    string movieRating;
     int boxOffice;
     int rottenTomatoScore;
 
@@ -21,18 +26,17 @@ class Rating
 
     public:
     //Getter prototypes
-    char getMovieRating() const;
+    string getMovieRating() const;
     int getBoxOffice() const;
     int getRTScore() const;
     //Setter prototypes
-    void setMovieRating(char);
+    void setMovieRating(string);
     void setBoxOffice(int);
-    void setCriticReview(int);
+    void setRTScore(int);
     //Constructor protoypes
     Rating(char, int, int);
     Rating();
-    //Destructor prototype
-    ~Rating();
+
 
 };
 

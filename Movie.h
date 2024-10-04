@@ -9,6 +9,8 @@
 #define MOVIE_H
 #include "DvdShelf.h"
 #include "Rating.h"
+#include <iomanip>
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -37,8 +39,7 @@ class Movie {
         //Constructor prototype
         Movie();
         Movie(string, string, Rating, int, int);
-        //Destructor Prototype
-        ~Movie();
+        //Destructor Prototyp
 
 
 };

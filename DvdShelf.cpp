@@ -12,12 +12,7 @@
     {
 
     }
-    //Destructor
-    DvdShelf::~DvdShelf()
-    {
-        cout << "\n\nDeleting the Dvd Shelf!\n\n";
-    }
-
+ 
 
 
 
@@ -32,7 +27,7 @@
           Purpose: Displays the entire shelf of movies
       Return Type: Void
 */
-void displayShelf(Movie ** movieArr, int movieCount)
+void DvdShelf::displayShelf(Movie ** movieArr, int movieCount)
 {
     //Still working on this one
     for(int i = 0; i<movieCount; i++)
@@ -55,14 +50,15 @@ void displayShelf(Movie ** movieArr, int movieCount)
           Purpose: Adds movies the DvDShelf
       Return Type: Void
 */
-Movie addMovies()
+Movie DvdShelf::addMovies()
 {
-    string genre, title;
-    int year, length, numMovies;
+    string genre, title, mR;
+    int year, length, numMovies, bO, rT;
     Movie movie;
 
 
     cout << "\n\nWhat is the title of your movie?\t";
+    getline(cin, title);
     cin.ignore();
     movie.setTitle(title);
     
@@ -80,7 +76,23 @@ Movie addMovies()
 
     cin >> length;
     movie.setMovieLength(length);
+
+    cout << "\n\nWhat is " << title << " rated?(G, PG, PG13, M)\t";
+
+    cin >> mR;
+    movie.movieRating.setMovieRating(mR);
+
     
+    cout << "\n\nWhat is " << title << "s box office?\t$";
+
+    cin >> bO;
+    movie.movieRating.setBoxOffice(bO);
+
+    cout << "\n\nWhat is " << title << "s rotten tomatoe score?\t%";
+
+    cin >> rT;
+    movie.movieRating.setRTScore(rT);
+
     cout << "\n\nYour movie has been added." << endl;
 
     cout << "\nTitle: " << movie.getTitle();
@@ -96,8 +108,4 @@ Movie addMovies()
           Purpose: Removes movies from the shelf
       Return Type: Void
 */
-void removeMovies(DvdShelf, Movie)
-{
-
-
-}
+//Movie DvdShelf::removeMovies(DvdShelf, Movie)

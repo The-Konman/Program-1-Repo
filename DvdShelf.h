@@ -24,7 +24,7 @@ class DvdShelf {
 
     //Function Prototypes
     Movie addMovies();
-    Movie removeMovies();
+    //Movie removeMovies();
     void displayShelf(Movie **, int);
     //void addToFile(DvdShelf, Movie);
     //void loadToFile(DvdShelf, Movie);  
@@ -32,8 +32,7 @@ class DvdShelf {
     //Default constructor
     DvdShelf();
 
-    //Destructor
-    ~DvdShelf();
+
 
 };
 

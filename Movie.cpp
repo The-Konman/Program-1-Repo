@@ -47,8 +47,8 @@
             title = "N/A";
             genre = "N/A";
             movieRating.setBoxOffice(0);
-            movieRating.setCriticReview(0);
-            movieRating.setMovieRating('N');
+            movieRating.setRTScore(0);
+            movieRating.setMovieRating("N/A");
             year = 0;
             movieLength = 0;
         }
