@@ -54,6 +54,7 @@
         {
             title = t;
             genre = g;
+            movieRating = r;
             year = y;
             movieLength = mL;
         }

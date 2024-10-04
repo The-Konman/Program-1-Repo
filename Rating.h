@@ -31,6 +31,8 @@ class Rating
     //Constructor protoypes
     Rating(int, int, int);
     Rating();
+    //Destructor prototype
+    ~Rating();
 
 };
 

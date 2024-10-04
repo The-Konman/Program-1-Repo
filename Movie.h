@@ -12,14 +12,14 @@
 class Movie {
 
     private:
-    
+
         string title;
         string genre;
-        Rating movieRating;
         int year;
         int movieLength;
 
     public:
+        Rating movieRating;
         //Getter prototypes
         string getTitle() const;
         string getGenre() const;

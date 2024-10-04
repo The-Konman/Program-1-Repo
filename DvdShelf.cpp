@@ -7,15 +7,42 @@
 
 #include "DvdShelf.h"
 
+
+    //Constructor
+    DvdShelf::DvdShelf()
+    {
+
+    }
+    //Destructor
+    DvdShelf::~DvdShelf()
+    {
+        cout << "\n\nDeleting the Dvd Shelf!\n\n";
+    }
+
+
+
+
+
+
+
+
+
+
 /*
     Function Name: displayShelf()
           Purpose: Displays the entire shelf of movies
       Return Type: Void
 */
-void displayShelf(DvdShelf currShelf, int movieCount)
+void displayShelf(Movie ** movieArr, int movieCount)
 {
-   
-    
+    //Still working on this
+    for(int i = 0; i<movieCount; i++)
+    {
+        cout << "\n\nMovie " << i+1;
+        cout << "\nTitle: " << *movieArr[i];
+        cout << "\nGenre: " << *movieArr[i];
+        cout << "\nLength: "<< *movieArr[i];
+    }
 }
 
 
@@ -24,13 +51,15 @@ void displayShelf(DvdShelf currShelf, int movieCount)
           Purpose: Adds movies the DvDShelf
       Return Type: Void
 */
-void addMovies(DvdShelf shelf, string m)
+Movie addMovies()
 {
-    string genre, title = m;
-    int year, length;
-
+    string genre, title;
+    int year, length, numMovies;
     Movie movie;
 
+
+    cout << "\n\nWhat is the title of your movie?\t";
+    cin.ignore();
     movie.setTitle(title);
     
     cout << "\n\nWhat genre is " << title << "?\t";
@@ -50,10 +79,12 @@ void addMovies(DvdShelf shelf, string m)
     
     cout << "\n\nYour movie has been added." << endl;
 
-    cout << "Title: " << movie.getTitle();
+    cout << "\nTitle: " << movie.getTitle();
     cout << "\nGenre: " << movie.getGenre();
     cout << "\nYear: " << movie.getYear();
     cout << "\nLength (in Minutes): " << movie.getMovieLength();
+
+    return movie;
 }
 
 /*

@@ -11,10 +11,12 @@
 int main () 
 {
     
-    int choice = 0;
-    string title;
-    Movie movie;
+    int choice = 0, movieCount = 0;
+    int MAX_SIZE = 100;
+    Movie currMovie;
     DvdShelf shelf;
+    //Dynamically allocate array of pointers to movie objects
+    shelf.movieArray = new Movie*[MAX_SIZE];
 
     cout << "\n\nWelcome to the Dvd Shelf" << endl<< endl;
 
@@ -39,12 +41,12 @@ int main ()
         if (choice == 1) {
 
             cout << "\n\nYou have chosen to add a movie." << endl;
-            cout << "What is the title of the movie you want to add?\t";
 
-            cin.ignore();
-            getline(cin, title);
-            shelf.addMovies(shelf, title);
+            currMovie = shelf.addMovies();
 
+            //Add the function information to the movieArray
+            shelf.movieArray[movieCount] = new Movie(currMovie.getTitle(), currMovie.getGenre(), 
+            currMovie.movieRating, currMovie.getMovieLength(), currMovie.getYear());
 
 
             cout << "\n\n\nWhat would you like to do next?" << endl;
@@ -60,7 +62,9 @@ int main ()
 
                 cout << "\n\nPlease select a valid option";
                 cin >> choice;
-    }
+            }
+            
+            movieCount++;
 
         }
 
@@ -69,14 +73,15 @@ int main ()
             cout << "\n\nYou have chosen to remove a movie." << endl;
             cout << "what is the title of the movie you want to remove?\t";
 
-            cin.ignore();
-            getline (cin, title);
+            //cin.ignore();
+            //getline (cin, title);
             
 
         }
 
         else if (choice == 3) {
 
+            shelf.displayShelf(shelf.movieArray, movieCount);
 
         }
 

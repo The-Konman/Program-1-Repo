@@ -13,40 +13,26 @@
 #include <iostream>
 using namespace std;
 
-class DvdShelf {
-
-        
+class DvdShelf { 
 
     public:
-        Movie *moviePtr;
+
         int movieCount;
         Movie ** movieArray;
+        Movie movie;
 
-    void addMovies(DvdShelf, string);
-    void removeMovies(DvdShelf, string);
-    void displayShelf(DvdShelf, int);
+    //Function Prototypes
+    Movie addMovies();
+    Movie removeMovies();
+    void displayShelf(Movie **, int);
     //void addToFile(DvdShelf, Movie);
     //void loadToFile(DvdShelf, Movie);  
 
-    //Overloaded constructor
-    DvdShelf(int movieCount, Movie* shelf[])
-    {
-        this->movieCount = movieCount;
-       // this->shelf = shelf;
-    }
-
     //Default constructor
-    DvdShelf()
-    {
-        this->movieCount = 0;
-       // this->shelf = 0;
-    }
+    DvdShelf();
 
     //Destructor
-    ~DvdShelf()
-    {
-        cout << "\n\nDeleting the Dvd Shelf!\n\n";
-    }
+    ~DvdShelf();
 
 };
 
