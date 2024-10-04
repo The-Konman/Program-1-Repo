@@ -45,7 +45,7 @@ int main ()
             
             cin.ignore();
             getline(cin, fileName);
-            shelf.loadFromFile(fileName);
+            //shelf.loadFromFile(fileName);
             
         }
 
@@ -85,7 +85,7 @@ int main ()
             cout << "\nHere are the movies currently on the shelf: ";
             for(int i = 0; i<movieCount; i++)
             {
-                cout << "\n\nMovie " << i << ":";
+                cout << "\n\nMovie " << i+1 << ":";
                 cout << endl << shelf.movieArray[i]->getTitle();
 
             }
@@ -96,6 +96,7 @@ int main ()
             removalIndex = shelf.removeMovies(shelf.movieArray, movieCount, titleRemoval);
             if(removalIndex!=-1)
             {
+                movieCount--;
                 cout << "\nYou successfully removed " << titleRemoval;
             }
             else

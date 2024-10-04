@@ -35,7 +35,7 @@ void DvdShelf::displayShelf(Movie ** movieArr, int movieCount)
         cout << "\nGenre: " << movieArr[i]->getGenre();
         cout << "\nYear: "<< movieArr[i]->getYear();
         cout << "\nLength: " << movieArr[i]->getMovieLength();
-        cout << "\nMovie ratings and statistics: ";
+        cout << "\nMovie ratings and statistics ";
         cout << "\nRating: " << movieArr[i]->movieRating.getMovieRating();
         cout << "\nBox Office: " << movieArr[i]->movieRating.getBoxOffice();
         cout << "\nRotten Tomatoes %" << movieArr[i]->movieRating.getRTScore();
@@ -140,9 +140,7 @@ int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemo
 
 
 
-
-
-
+/*
 void loadFromFile(string file) 
 {
     fstream inFile;
@@ -157,3 +155,4 @@ void loadFromFile(string file)
     }
     
 }
+*/
