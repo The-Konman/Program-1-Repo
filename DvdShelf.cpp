@@ -9,9 +9,7 @@
 
     //Constructor
     DvdShelf::DvdShelf()
-    {
-
-    }
+    {}
  
 
 
@@ -37,7 +35,7 @@ void DvdShelf::displayShelf(Movie ** movieArr, int movieCount)
         cout << "\nGenre: " << movieArr[i]->getGenre();
         cout << "\nYear: "<< movieArr[i]->getYear();
         cout << "\nLength: " << movieArr[i]->getMovieLength();
-        cout << "\nMovie ratings and statistics:";
+        cout << "\nMovie ratings and statistics: ";
         cout << "\nRating: " << movieArr[i]->movieRating.getMovieRating();
         cout << "\nBox Office: " << movieArr[i]->movieRating.getBoxOffice();
         cout << "\nRotten Tomatoes %" << movieArr[i]->movieRating.getRTScore();
@@ -58,8 +56,8 @@ Movie DvdShelf::addMovies()
 
 
     cout << "\n\nWhat is the title of your movie?\t";
-    getline(cin, title);
     cin.ignore();
+    getline(cin, title);
     movie.setTitle(title);
     
     cout << "\n\nWhat genre is " << title << "?\t";
@@ -108,10 +106,42 @@ Movie DvdShelf::addMovies()
           Purpose: Removes movies from the shelf
       Return Type: Void
 */
-//Movie DvdShelf::removeMovies(DvdShelf, Movie)
+int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemoval)
+{
+    int index = 0, removalIndex;
+    bool removalBool;
 
+    while(index<movieCount&&!removalBool)
+            {
+                if(movieArray[index]->getTitle()==titleRemoval)
+                {
+                    removalBool = true;
+                    removalIndex = index;
+                }
+                index++;
+            }
 
+            if(removalBool==true)
+            {
+                movieArray[removalIndex]->setTitle("N/A");
+                movieArray[removalIndex]->setGenre("N/A");
+                movieArray[removalIndex]->setMovieLength(0);
+                movieArray[removalIndex]->setYear(0);
+                movieArray[removalIndex]->movieRating.setBoxOffice(0);
+                movieArray[removalIndex]->movieRating.setMovieRating("N/A");
+                movieArray[removalIndex]->movieRating.setRTScore(0);
+                return(removalIndex);
+            }
+            else
+            {
+                return(-1);
+            }
 }
+
+
+
+
+
 
 void loadFromFile(string file) 
 {

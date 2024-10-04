@@ -10,9 +10,9 @@
 
 int main () 
 {
-    int choice = 0, movieCount = 0;
+    int choice = 0, movieCount = 0, removalIndex;
     int MAX_SIZE = 100;
-    string fileName;
+    string fileName, titleRemoval;
     Movie currMovie;
     DvdShelf shelf;
     //Dynamically allocate array of pointers to movie objects
@@ -59,6 +59,7 @@ int main ()
             shelf.movieArray[movieCount] = new Movie(currMovie.getTitle(), currMovie.getGenre(), 
             currMovie.movieRating, currMovie.getMovieLength(), currMovie.getYear());
 
+            movieCount = movieCount+1;
 
             cout << "\n\n\nWhat would you like to do next?" << endl;
             cout << "1. Add Movie" << endl;
@@ -75,17 +76,32 @@ int main ()
                 cin >> choice;
             }
             
-            movieCount++;
 
         }
 
         else if (choice == 4) {
 
             cout << "\n\nYou have chosen to remove a movie." << endl;
-            cout << "what is the title of the movie you want to remove?\t";
+            cout << "\nHere are the movies currently on the shelf: ";
+            for(int i = 0; i<movieCount; i++)
+            {
+                cout << "\n\nMovie " << i << ":";
+                cout << endl << shelf.movieArray[i]->getTitle();
 
-            //cin.ignore();
-            //getline (cin, title);
+            }
+
+            cout << "\nWhat is the title of the movie you want to remove?\t";
+            cin.ignore();
+            getline(cin, titleRemoval);
+            removalIndex = shelf.removeMovies(shelf.movieArray, movieCount, titleRemoval);
+            if(removalIndex!=-1)
+            {
+                cout << "\nYou successfully removed " << titleRemoval;
+            }
+            else
+            {
+                cout << "\nThat movie was not found!";
+            }
             
             
 

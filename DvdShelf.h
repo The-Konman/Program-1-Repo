@@ -25,7 +25,7 @@ class DvdShelf {
 
     //Function Prototypes
     Movie addMovies();
-    //Movie removeMovies();
+    int removeMovies(Movie **, int, string);
     void displayShelf(Movie **, int);
     //void addToFile(DvdShelf, Movie);
     void loadFromFile(string);  
