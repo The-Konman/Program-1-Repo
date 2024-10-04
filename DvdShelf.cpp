@@ -7,7 +7,6 @@
 
 #include "DvdShelf.h"
 
-
     //Constructor
     DvdShelf::DvdShelf()
     {
