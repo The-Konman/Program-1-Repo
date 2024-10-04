@@ -13,6 +13,7 @@ int main ()
     
     int choice = 0, movieCount = 0;
     int MAX_SIZE = 100;
+    string fileName;
     Movie currMovie;
     DvdShelf shelf;
     //Dynamically allocate array of pointers to movie objects
@@ -20,15 +21,17 @@ int main ()
 
     cout << "\n\nWelcome to the Dvd Shelf" << endl<< endl;
 
-    cout << "1. Add Movie" << endl;
-    cout << "2. Remove Movie" << endl;
-    cout << "3. Display Movies" << endl;
-    cout << "4. Quit Program" << endl;
+    cout << "1. Load Movies from File" << endl;
+    cout << "2. Save Movies to File" << endl;
+    cout << "3. Add Movie" << endl;
+    cout << "4. Remove Movie" << endl;
+    cout << "5. Display Movies" << endl;
+    cout << "6. Quit Program" << endl;
 
     cout << "Pick an option from above\t";
     cin >> choice;
 
-    while (choice < 1 || choice > 4) {
+    while (choice < 1 || choice > 6) {
 
         cout << "\n\nPlease select a valid option";
         cin >> choice;
@@ -36,9 +39,19 @@ int main ()
 
 
 
-    while (choice != 4) {
+    while (choice != 6) {
 
         if (choice == 1) {
+            cout << "\n\nYou have chosen to load movies from a file" << endl;
+            cout << "What is the name of the file you would like to load movies from?" << endl;
+            
+            cin.ignore();
+            getline(cin, fileName);
+            shelf.loadFromFile(fileName);
+            
+        }
+
+        else if (choice == 3) {
 
             cout << "\n\nYou have chosen to add a movie." << endl;
 
@@ -68,7 +81,7 @@ int main ()
 
         }
 
-        else if (choice == 2) {
+        else if (choice == 4) {
 
             cout << "\n\nYou have chosen to remove a movie." << endl;
             cout << "what is the title of the movie you want to remove?\t";
@@ -76,10 +89,11 @@ int main ()
             //cin.ignore();
             //getline (cin, title);
             
+            
 
         }
 
-        else if (choice == 3) {
+        else if (choice == 5) {
             
             cout << "\n\nYou have chosen to Display Movies." << endl;
 

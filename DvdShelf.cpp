@@ -109,3 +109,21 @@ Movie DvdShelf::addMovies()
       Return Type: Void
 */
 //Movie DvdShelf::removeMovies(DvdShelf, Movie)
+
+
+}
+
+void loadFromFile(string file) 
+{
+    fstream inFile;
+    inFile.open(file);
+    if (!inFile.is_open()) {
+        cout << "\nSorry, we were unable to open the file." << endl;
+    }
+    else {
+        while (!inFile.eof()) {
+            getline(inFile, )
+        }
+    }
+    
+}

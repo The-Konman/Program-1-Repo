@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 class DvdShelf { 
@@ -27,7 +28,7 @@ class DvdShelf {
     //Movie removeMovies();
     void displayShelf(Movie **, int);
     //void addToFile(DvdShelf, Movie);
-    //void loadToFile(DvdShelf, Movie);  
+    void loadFromFile(string);  
 
     //Default constructor
     DvdShelf();
