@@ -21,15 +21,15 @@ class Rating
 
     public:
     //Getter prototypes
-    int getMovieRating() const;
+    char getMovieRating() const;
     int getBoxOffice() const;
     int getRTScore() const;
     //Setter prototypes
-    void setMovieRating(double);
-    void setBoxOffice(double);
+    void setMovieRating(char);
+    void setBoxOffice(int);
     void setCriticReview(int);
     //Constructor protoypes
-    Rating(int, int, int);
+    Rating(char, int, int);
     Rating();
     //Destructor prototype
     ~Rating();

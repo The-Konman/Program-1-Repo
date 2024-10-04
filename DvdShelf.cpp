@@ -35,13 +35,18 @@
 */
 void displayShelf(Movie ** movieArr, int movieCount)
 {
-    //Still working on this
+    //Still working on this one
     for(int i = 0; i<movieCount; i++)
     {
         cout << "\n\nMovie " << i+1;
-        cout << "\nTitle: " << *movieArr[i];
-        cout << "\nGenre: " << *movieArr[i];
-        cout << "\nLength: "<< *movieArr[i];
+        cout << "\nTitle: " << movieArr[i]->getTitle();
+        cout << "\nGenre: " << movieArr[i]->getGenre();
+        cout << "\nYear: "<< movieArr[i]->getYear();
+        cout << "\nLength: " << movieArr[i]->getMovieLength();
+        cout << "\nMovie ratings and statistics:";
+        cout << "\nRating: " << movieArr[i]->movieRating.getMovieRating();
+        cout << "\nBox Office: " << movieArr[i]->movieRating.getBoxOffice();
+        cout << "\nRotten Tomatoes %" << movieArr[i]->movieRating.getRTScore();
     }
 }
 

@@ -7,7 +7,7 @@
 
 #include "DvdShelf.h"
     //Getters
-    int Rating::getMovieRating() const
+    char Rating::getMovieRating() const
     {
         return movieRating;
 
@@ -23,11 +23,11 @@
     }
 
     //Setters
-    void Rating::setMovieRating(double mR)
+    void Rating::setMovieRating(char r)
     {
-        movieRating = mR;
+        movieRating = r;
     }
-    void Rating::setBoxOffice(double bO)
+    void Rating::setBoxOffice(int bO)
     {
         boxOffice = bO;
     }
@@ -39,15 +39,15 @@
     //Default Constructor
     Rating::Rating()
     {
-        movieRating = 0;
+        movieRating = 'N';
         boxOffice = 0;
         rottenTomatoScore = 0;
     }
 
     //Overloaded constructor
-    Rating::Rating(int mR, int bO, int rTS)
+    Rating::Rating(char r, int bO, int rTS)
     {
-        movieRating = mR;
+        movieRating = r;
         boxOffice = bO;
         rottenTomatoScore = rTS;
     }
