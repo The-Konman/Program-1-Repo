@@ -1,7 +1,8 @@
 /*
-
-
-
+    Title: Movie.h
+  Authors: Konnor Lorance, George Vaporis, Madeline Griffin
+     Date: 10/4/2024
+  Purpose: Movie class header file
 */
 
 #ifndef MOVIE_H
@@ -11,9 +12,10 @@
 class Movie {
 
     private:
+    
         string title;
         string genre;
-        Rating* movierating;
+        Rating movieRating;
         int year;
         int movieLength;
 
@@ -31,6 +33,7 @@ class Movie {
 
         //Constructor prototype
         Movie();
+        Movie(string, string, Rating, int, int);
         //Destructor Prototype
         ~Movie();
 

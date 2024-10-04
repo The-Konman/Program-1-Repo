@@ -1,12 +1,11 @@
 /*
-
-
-
+    Title: DvdShelf.cpp  
+  Authors: Konnor Lorance, George Vaporis, Madeline Griffin
+     Date: 10/4/2024
+  Purpose: DvdShelf class definitons and functions
 */
 
-
 #include "DvdShelf.h"
-
 
 /*
     Function Name: displayShelf()

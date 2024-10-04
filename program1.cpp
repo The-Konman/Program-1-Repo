@@ -1,8 +1,8 @@
 /*
-    Title:     
-    Authors:        
-    Date:       
-    Purpose:    
+    Title: program1.cpp  
+  Authors: Konnor Lorance, George Vaporis, Madeline Griffin
+     Date: 10/4/2024
+  Purpose: Menu based program simulation of a shelf of Dvds containing different movies.
 */
 
 #include "DvdShelf.h"
@@ -15,8 +15,6 @@ int main ()
     string title;
     Movie movie;
     DvdShelf shelf;
-    
-
 
     cout << "\n\nWelcome to the Dvd Shelf" << endl<< endl;
 

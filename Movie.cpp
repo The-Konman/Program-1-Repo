@@ -1,12 +1,12 @@
 /*
-
-
-
-
+    Title: Movie.cpp  
+  Authors: Konnor Lorance, George Vaporis, Madeline Griffin
+     Date: 10/4/2024
+  Purpose: Movie class definitions and member functions
 */
 
 #include "DvdShelf.h"
-
+        //Mutators
         string Movie::getTitle() const
         {
             return title; 
@@ -41,8 +41,19 @@
         {
             movieLength = m;
         }
-
+        //Default Constructor
         Movie::Movie()
         {
-            
+            title = "N/A";
+            genre = "N/A";
+            year = 0;
+            movieLength = 0;
+        }
+        //Overloaded constructor
+        Movie::Movie(string t, string g, Rating r, int y,  int mL)
+        {
+            title = t;
+            genre = g;
+            year = y;
+            movieLength = mL;
         }

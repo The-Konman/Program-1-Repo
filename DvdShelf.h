@@ -1,7 +1,8 @@
 /*
-
-
-
+    Title: DvdShelf.h  
+  Authors: Konnor Lorance, George Vaporis, Madeline Griffin
+     Date: 10/4/2024
+  Purpose: DvdShelf class header file
 */
 
 #ifndef DVDSHELF_H
