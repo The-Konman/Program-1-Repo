@@ -8,6 +8,9 @@
 #ifndef MOVIE_H
 #define MOVIE_H
 #include "DvdShelf.h"
+#include "Rating.h"
+#include <string>
+using namespace std;
 
 class Movie {
 

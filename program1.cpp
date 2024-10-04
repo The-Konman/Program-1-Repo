@@ -80,6 +80,8 @@ int main ()
         }
 
         else if (choice == 3) {
+            
+            cout << "\n\nYou have chosen to Display Movies." << endl;
 
             shelf.displayShelf(shelf.movieArray, movieCount);
 
