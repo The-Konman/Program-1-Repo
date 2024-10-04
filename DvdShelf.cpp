@@ -123,13 +123,18 @@ int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemo
 
             if(removalBool==true)
             {
-                movieArray[removalIndex]->setTitle("N/A");
-                movieArray[removalIndex]->setGenre("N/A");
-                movieArray[removalIndex]->setMovieLength(0);
-                movieArray[removalIndex]->setYear(0);
-                movieArray[removalIndex]->movieRating.setBoxOffice(0);
-                movieArray[removalIndex]->movieRating.setMovieRating("N/A");
-                movieArray[removalIndex]->movieRating.setRTScore(0);
+                //Move all elements back one
+                for(int i = removalIndex; i<movieCount; i++)
+                {
+                    movieArray[removalIndex]->setTitle(movieArray[removalIndex+1]->getTitle());
+                    movieArray[removalIndex]->setGenre(movieArray[removalIndex+1]->getGenre());
+                    movieArray[removalIndex]->setMovieLength(movieArray[removalIndex+1]->getMovieLength());
+                    movieArray[removalIndex]->setYear(movieArray[removalIndex+1]->getYear());
+                    movieArray[removalIndex]->movieRating.setBoxOffice(movieArray[removalIndex+1]->movieRating.getBoxOffice());
+                    movieArray[removalIndex]->movieRating.setMovieRating(movieArray[removalIndex+1]->movieRating.getMovieRating());
+                    movieArray[removalIndex]->movieRating.setRTScore(movieArray[removalIndex+1]->movieRating.getRTScore());
+
+                }
                 return(removalIndex);
             }
             else
