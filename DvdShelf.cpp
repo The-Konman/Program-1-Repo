@@ -144,8 +144,8 @@ int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemo
 
 int DvdShelf::loadFromFile(Movie ** movieArray, string file) 
 {
-    string genre, title, mR;
-    int year, length, numMovies, bO, rT, index = 0;
+    string genre, title, mR, y, l, nM, bO, rT;
+    int index = 0;
     ifstream inFile;
     inFile.open(file);
     if (!inFile.is_open()) {
@@ -158,21 +158,24 @@ int DvdShelf::loadFromFile(Movie ** movieArray, string file)
             getline(inFile, genre);
             movieArray[index]->setGenre(genre);
 
-            inFile >> year;
+            getline(inFile, y);
+            int year = stoi(y);
             movieArray[index]->setYear(year);
 
-            inFile >> length;
-            movieArray[index]->setMovieLength(year);
+            getline(inFile, l);
+            int length = stoi(l);
+            movieArray[index]->setMovieLength(length);
 
-            inFile.ignore();
             getline(inFile, mR);
             movieArray[index]->movieRating.setMovieRating(mR);
 
-            inFile >> bO;
-            movieArray[index]->movieRating.setBoxOffice(bO);
+            getline(inFile, bO);
+            int boxOffice = stoi(bO);
+            movieArray[index]->movieRating.setBoxOffice(boxOffice);
 
-            inFile >> rT;
-            movieArray[index]->movieRating.setRTScore(rT);
+            getline(inFile, rT);
+            int rottenTomatoes = stoi(rT);
+            movieArray[index]->movieRating.setRTScore(rottenTomatoes);
 
             inFile.ignore();
             index++;
