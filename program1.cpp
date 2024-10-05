@@ -17,7 +17,7 @@ int main ()
     DvdShelf shelf;
     //Dynamically allocate array of pointers to movie objects
     shelf.movieArray = new Movie*[MAX_SIZE];
-
+    //Do-while loop for the menu
     do
     {
     cout << "\n\nWelcome to the Dvd Shelf" << endl<< endl;
@@ -31,14 +31,14 @@ int main ()
 
     cout << "Pick an option from above\t";
     cin >> choice;
-
+    //Validate user input
     while (choice < 1 || choice > 6) {
 
         cout << "\n\nPlease select a valid option";
         cin >> choice;
     }
 
-
+        //Load movies from file
         if (choice == 1) {
             cout << "\n\nYou have chosen to load movies from a file" << endl;
             cout << "\nWhat is the name of the file you would like to load movies from?" << endl;
@@ -53,7 +53,7 @@ int main ()
             movieCount = movieCount+1;
             
         }
-
+        //Add movies to file
         else if (choice == 2) {
             cout << "\n\nYou have chosen to add movies to a file" << endl;
             cout << "\nWhat is the name of the file you would like to add movies to?" << endl;
@@ -62,7 +62,7 @@ int main ()
             shelf.addToFile(shelf.movieArray, movieCount, outFileName);
 
         }
-
+        //Add movies to the DvdShelf
         else if (choice == 3) {
 
             cout << "\n\nYou have chosen to add a movie to the shelf." << endl;
@@ -72,14 +72,15 @@ int main ()
             //Add the function information to the movieArray
             shelf.movieArray[movieCount] = new Movie(currMovie.getTitle(), currMovie.getGenre(), 
             currMovie.movieRating, currMovie.getMovieLength(), currMovie.getYear());
-
+            //Increment size of movieCount
             movieCount = movieCount+1;
         }
-
+        //Remove movies from the shelf
         else if (choice == 4) {
 
             cout << "\n\nYou have chosen to remove a movie." << endl;
             cout << "\nHere are the movies currently on the shelf: ";
+            //Print the moie titles for the user
             for(int i = 0; i<movieCount; i++)
             {
                 cout << "\n\nMovie " << i+1 << ":";
@@ -99,12 +100,10 @@ int main ()
             else
             {
                 cout << "\nThat movie was not found!";
-            }
-            
-            
+            }   
 
         }
-
+        //Display all the movies in the shelf
         else if (choice == 5) {
             
             cout << "\n\nYou have chosen to Display Movies." << endl;
@@ -112,12 +111,12 @@ int main ()
             shelf.displayShelf(shelf.movieArray, movieCount);
 
         }
-
+    //Exit case
     }while (choice != 6);
 
     cout << "\n\nYou have successfully quit the program." << endl;
 
-    //Delete all dynamically allocated stuff
+    //Delete all dynamically allocated data
     for(int i = 0; i<movieCount; i++)
     {
         delete shelf.movieArray[i];
