@@ -145,20 +145,39 @@ int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemo
 
 
 
-/*
-void DvdShelf::loadFromFile(string file) 
+
+void loadFromFile(string file) 
 {
-    string title;
+    string genre, title, mR;
+    int year, length, numMovies, bO, rT;
+    Movie movie;
     fstream inFile;
     inFile.open(file);
     if (!inFile.is_open()) {
         cout << "\nSorry, we were unable to open the file." << endl;
     }
     else {
-        while (getline(file, title)) {
-            getline(file, genre);
-            getline(file, year);
-            getline(file, length);
+        while (!inFile.eof()) {
+            getline(inFile, title);
+            movie.setTitle(title);
+
+            getline(inFile, genre);
+            movie.setGenre(genre);
+
+            inFile >> year;
+            movie.setYear(year);
+
+            inFile >> length;
+            movie.setMovieLength(length);
+
+            getline(inFile, mR);
+            movie.movieRating.setMovieRating(mR);
+
+            inFile >> bO;
+            movie.movieRating.setBoxOffice(bO);
+
+            inFile >> rT;
+            movie.movieRating.setRTScore(rT);
         }
     }
     

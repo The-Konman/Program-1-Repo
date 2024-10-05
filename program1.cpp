@@ -47,6 +47,11 @@ int main ()
             getline(cin, inFileName);
             //shelf.loadFromFile(inFileName);
             
+            shelf.movieArray[movieCount] = new Movie(currMovie.getTitle(), currMovie.getGenre(), 
+            currMovie.movieRating, currMovie.getMovieLength(), currMovie.getYear());
+
+            movieCount = movieCount+1;
+            
         }
 
         else if (choice == 2) {
