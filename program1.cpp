@@ -112,5 +112,13 @@ int main ()
 
     cout << "\n\nYou have successfully quit the program." << endl;
 
+    //Delete all dynamically allocated stuff
+    for(int i = 0; i<movieCount; i++)
+    {
+        delete shelf.movieArray[i];
+    }
+
+    delete [] shelf.movieArray;
+
     return 0;
 }
