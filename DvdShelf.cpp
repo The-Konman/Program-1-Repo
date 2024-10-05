@@ -27,7 +27,7 @@
 */
 void DvdShelf::displayShelf(Movie ** movieArr, int movieCount)
 {
-    
+    //Print all movie data at each element
     for(int i = 0; i<movieCount; i++)
     {
         cout << "\n\nMovie " << i+1;
@@ -35,7 +35,7 @@ void DvdShelf::displayShelf(Movie ** movieArr, int movieCount)
         cout << "\nGenre: " << movieArr[i]->getGenre();
         cout << "\nYear: "<< movieArr[i]->getYear();
         cout << "\nLength: " << movieArr[i]->getMovieLength();
-        cout << "\nMovie ratings and statistics ";
+        cout << "\n\nMovie ratings and statistics ";
         cout << "\nRating: " << movieArr[i]->movieRating.getMovieRating();
         cout << "\nBox Office: " << movieArr[i]->movieRating.getBoxOffice();
         cout << "\nRotten Tomatoes %" << movieArr[i]->movieRating.getRTScore();
@@ -46,7 +46,7 @@ void DvdShelf::displayShelf(Movie ** movieArr, int movieCount)
 /*
     Function Name: addMovies()
           Purpose: Adds movies the DvDShelf
-      Return Type: Void
+      Return Type: Movie
 */
 Movie DvdShelf::addMovies()
 {
@@ -93,24 +93,19 @@ Movie DvdShelf::addMovies()
 
     cout << "\n\nYour movie has been added." << endl;
 
-    cout << "\nTitle: " << movie.getTitle();
-    cout << "\nGenre: " << movie.getGenre();
-    cout << "\nYear: " << movie.getYear();
-    cout << "\nLength (in Minutes): " << movie.getMovieLength();
-
     return movie;
 }
 
 /*
     Function Name: removeMovies()
           Purpose: Removes movies from the shelf
-      Return Type: Void
+      Return Type: int
 */
 int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemoval)
 {
     int index = 0, removalIndex;
     bool removalBool;
-
+    //Linear search algorithm to find which element to delete
     while(index<movieCount&&!removalBool)
             {
                 if(movieArray[index]->getTitle()==titleRemoval)
@@ -120,10 +115,9 @@ int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemo
                 }
                 index++;
             }
-
+            //Move all elements back one if the title is found
             if(removalBool==true)
             {
-                //Move all elements back one
                 for(int i = removalIndex; i<movieCount; i++)
                 {
                     movieArray[removalIndex]->setTitle(movieArray[removalIndex+1]->getTitle());
@@ -135,8 +129,10 @@ int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemo
                     movieArray[removalIndex]->movieRating.setRTScore(movieArray[removalIndex+1]->movieRating.getRTScore());
 
                 }
+                //Returns the index where the title was found
                 return(removalIndex);
             }
+            //Otherwise, 
             else
             {
                 return(-1);
@@ -163,6 +159,11 @@ void DvdShelf::loadFromFile(string file)
 */
 
 
+/*
+    Function Name: addToFile()
+          Purpose: Adds movieArray data to a file
+      Return Type: Void
+*/
 void DvdShelf::addToFile(Movie ** movieArr, int movieCount, string fileName)
 {
     ofstream outFile;
