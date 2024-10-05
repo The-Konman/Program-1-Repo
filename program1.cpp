@@ -43,9 +43,8 @@ int main ()
             cout << "\n\nYou have chosen to load movies from a file" << endl;
             cout << "\nWhat is the name of the file you would like to load movies from?" << endl;
             
-            cin.ignore();
             getline(cin, inFileName);
-            shelf.loadFromFile(inFileName);
+            shelf.loadFromFile(shelf.movieArray, movieCount, inFileName);
             
             shelf.movieArray[movieCount] = new Movie(currMovie.getTitle(), currMovie.getGenre(), 
             currMovie.movieRating, currMovie.getMovieLength(), currMovie.getYear());

@@ -142,7 +142,7 @@ int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemo
 
 
 
-void DvdShelf::loadFromFile(string file) 
+void DvdShelf::loadFromFile(Movie ** movieArr, int movieCount, string file) 
 {
     string genre, title, mR;
     int year, length, numMovies, bO, rT;
