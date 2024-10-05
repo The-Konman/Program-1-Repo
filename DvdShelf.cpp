@@ -176,6 +176,8 @@ void DvdShelf::loadFromFile(string file)
             movie.movieRating.setRTScore(rT);
         }
     }
+
+    inFile.close();
     
 }
 
