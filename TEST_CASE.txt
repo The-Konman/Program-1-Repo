@@ -25,10 +25,8 @@ PG
 9
 5
 2
-test.txt
 4
 Beetlejuice
 1
 moviefile.txt
-5
 6
