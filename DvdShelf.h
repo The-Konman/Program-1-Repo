@@ -28,7 +28,7 @@ class DvdShelf {
     int removeMovies(Movie **, int, string);
     void displayShelf(Movie **, int);
     void addToFile(Movie **, int, string);
-    void loadFromFile(Movie **, int, string);  
+    int loadFromFile(Movie **, string);  
 
     //Default constructor
     DvdShelf();

@@ -17,7 +17,6 @@ using namespace std;
 class Movie {
 
     private:
-
         string title;
         string genre;
         int year;
@@ -39,8 +38,6 @@ class Movie {
         //Constructor prototype
         Movie();
         Movie(string, string, Rating, int, int);
-        //Destructor Prototyp
-
 
 };
 
