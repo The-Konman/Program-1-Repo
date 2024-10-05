@@ -182,7 +182,7 @@ void loadFromFile(string file)
     }
     
 }
-*/
+
 
 
 void DvdShelf::addToFile(Movie ** movieArr, int movieCount, string fileName)
