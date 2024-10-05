@@ -148,14 +148,17 @@ int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemo
 /*
 void loadFromFile(string file) 
 {
+    string title;
     fstream inFile;
     inFile.open(file);
     if (!inFile.is_open()) {
         cout << "\nSorry, we were unable to open the file." << endl;
     }
     else {
-        while (!inFile.eof()) {
-            getline(inFile, )
+        while (getline(file, title)) {
+            getline(file, genre);
+            getline(file, year);
+            getline(file, length);
         }
     }
     
