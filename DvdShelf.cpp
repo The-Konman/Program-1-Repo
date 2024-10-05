@@ -27,7 +27,7 @@
 */
 void DvdShelf::displayShelf(Movie ** movieArr, int movieCount)
 {
-    //Still working on this one
+    
     for(int i = 0; i<movieCount; i++)
     {
         cout << "\n\nMovie " << i+1;
@@ -146,7 +146,7 @@ int DvdShelf::removeMovies(Movie ** movieArray, int movieCount, string titleRemo
 
 
 /*
-void loadFromFile(string file) 
+void DvdShelf::loadFromFile(string file) 
 {
     string title;
     fstream inFile;
@@ -164,3 +164,29 @@ void loadFromFile(string file)
     
 }
 */
+
+
+void DvdShelf::addToFile(Movie ** movieArr, int movieCount, string fileName)
+{
+    ofstream outFile;
+    outFile.open(fileName);
+    if (!outFile.is_open()) {
+        cout << "\nSorry, we were unable to open the file." << endl;
+    }
+    else 
+    {
+        for(int i = 0; i<movieCount; i++)
+        {
+            outFile << movieArr[i]->getTitle() << endl;
+            outFile << movieArr[i]->getGenre() << endl;
+            outFile << movieArr[i]->getYear() << endl;
+            outFile << movieArr[i]->getMovieLength() << endl;
+            outFile << movieArr[i]->movieRating.getMovieRating() << endl;
+            outFile << movieArr[i]->movieRating.getBoxOffice() << endl;
+            outFile << movieArr[i]->movieRating.getRTScore() << endl;
+        }
+    }
+    outFile.close();
+    cout << "\n\nDone writing to file.";
+
+}
