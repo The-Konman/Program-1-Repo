@@ -1,14 +1,27 @@
 Star Wars
 SciFi
-127
-1990
+1977
+121
+PG
+775000000
+93
+Iron man
+Action
+2008
+126
 PG13
-303030303
-98
-Konnor
-Lorance
-45
-19843
-g
-39393
-45
+621000000
+Barbie
+Comedy
+2023
+PG13
+14446000000
+88
+Legends of the Fall
+Western
+1994
+133
+R
+160000000
+59
+
