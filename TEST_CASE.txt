@@ -25,7 +25,10 @@ PG
 9
 5
 2
+<<<<<<< HEAD
 test.txt
+=======
+>>>>>>> origin/main
 4
 Beetlejuice
 1
