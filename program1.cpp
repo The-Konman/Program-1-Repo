@@ -12,7 +12,7 @@ int main ()
 {
     int choice = 0, movieCount = 0, removalIndex;
     int MAX_SIZE = 100;
-    string fileName, titleRemoval;
+    string inFileName, titleRemoval, outFileName;
     Movie currMovie;
     DvdShelf shelf;
     //Dynamically allocate array of pointers to movie objects
@@ -41,17 +41,26 @@ int main ()
 
         if (choice == 1) {
             cout << "\n\nYou have chosen to load movies from a file" << endl;
-            cout << "What is the name of the file you would like to load movies from?" << endl;
+            cout << "\nWhat is the name of the file you would like to load movies from?" << endl;
             
             cin.ignore();
-            getline(cin, fileName);
-            //shelf.loadFromFile(fileName);
+            getline(cin, inFileName);
+            //shelf.loadFromFile(inFileName);
             
+        }
+
+        else if (choice == 2) {
+            cout << "\n\nYou have chosen to add movies to a file" << endl;
+            cout << "\nWhat is the name of the file you would like to add movies to?" << endl;
+            cin.ignore();
+            getline(cin, outFileName);
+            shelf.addToFile(shelf.movieArray, movieCount, outFileName);
+
         }
 
         else if (choice == 3) {
 
-            cout << "\n\nYou have chosen to add a movie." << endl;
+            cout << "\n\nYou have chosen to add a movie to the shelf." << endl;
 
             currMovie = shelf.addMovies();
 
@@ -60,23 +69,6 @@ int main ()
             currMovie.movieRating, currMovie.getMovieLength(), currMovie.getYear());
 
             movieCount = movieCount+1;
-
-            cout << "\n\n\nWhat would you like to do next?" << endl;
-            cout << "1. Add Movie" << endl;
-            cout << "2. Remove Movie" << endl;
-            cout << "3. Display Movies" << endl;
-            cout << "4. Quit Program" << endl;
-
-            cout << "Pick an option from above\t";
-            cin >> choice;
-
-            while (choice < 1 || choice > 4) {
-
-                cout << "\n\nPlease select a valid option";
-                cin >> choice;
-            }
-            
-
         }
 
         else if (choice == 4) {
